@@ -317,6 +317,9 @@ func _toggle_hint() -> void:
 
 func _modal_base() -> Control:
 	_close_modal()
+	var focused = get_viewport().gui_get_focus_owner()
+	if focused != null:
+		focused.release_focus()
 	modal = Control.new()
 	modal.size = Vector2(1440,900)
 	modal.mouse_filter = Control.MOUSE_FILTER_STOP
@@ -365,7 +368,7 @@ func _finish() -> void:
 		_button("回到第一关",Rect2(352,388,305,54),func(): _load_level(0),true,panel)
 	_label("%s" % ("三关已完成。现在试试更少的行动。" if wins.size()==3 else "观察攻击预览，再决定下一步。"),Vector2(42,474),Vector2(630,28),16,MUTED,panel)
 
-func _unhandled_key_input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
 	if not event is InputEventKey or not event.pressed or event.echo:
 		return
 	if event.keycode == KEY_R:
@@ -385,6 +388,8 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		var direction = keys.find(event.keycode)
 		if direction >= 0:
 			_on_cell_clicked(battle.by_id(selected).pos+Battle.DIRECTIONS[direction])
+	if event.keycode in [KEY_R,KEY_ESCAPE,KEY_E,KEY_1,KEY_2,KEY_3,KEY_UP,KEY_RIGHT,KEY_DOWN,KEY_LEFT]:
+		get_viewport().set_input_as_handled()
 
 func _capture(path: String) -> void:
 	await get_tree().create_timer(1.0).timeout

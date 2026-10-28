@@ -4,6 +4,8 @@
 
 3×3 棋盘，固定 2v2；比接触面的数字，将敌人推出棋盘。没有生命值、旋转、随机属性或成长系统。
 
+![FallBoard 实际游戏画面与攻击预览](https://github.com/nOstalgia-April/FallBoard/releases/latest/download/FallBoard-preview.png)
+
 ## 直接试玩
 
 - **Windows**：从 [Releases](https://github.com/nOstalgia-April/FallBoard/releases) 下载 `FallBoard-Windows.zip`，解压后双击 `FallBoard.exe`。不需要安装 Godot。
@@ -70,6 +72,8 @@ godot --headless --path . --script tests/ui_tests.gd
 ```
 
 规则测试覆盖四方向比较、等值失败、阻挡、固定数值、AP、回合、20 轮边界、AI 优先级及三关可解性。界面流程测试覆盖选择、预览、三关完整通关、结果弹层，以及敌方行动 / 动画中重开。
+
+当前自动断言为 **135 项规则检查 + 36 项界面流程检查**。CI 还会用实际图形渲染生成普通尺寸 / 小窗口截图，并在 Chromium 中加载导出的 Web 包、执行真实鼠标操作、保存第一关通关画面。截图随每个 Release 一起发布，便于核对构建结果。
 
 在 Godot 编辑器中选择「项目 → 导出」，安装 **4.5.1 对应导出模板**后导出。命令行方式：
 

@@ -82,6 +82,16 @@ func run() -> void:
 	for step in route:
 		await action(step[0],step[1])
 	check(game.battle.result=="victory","level 3 cooperation win through UI")
+	game._load_level(1)
+	game.level_buttons[1].grab_focus()
+	game._on_cell_clicked(Vector2i(0,2))
+	var key_event = InputEventKey.new()
+	key_event.keycode = KEY_UP
+	key_event.pressed = true
+	Input.parse_input_event(key_event)
+	await process_frame
+	await idle()
+	check(game.battle.by_id("P1").pos==Vector2i(0,1),"arrow control works even after clicking level buttons")
 	game._load_level(2)
 	# Immediate end allows the strong enemy to push A off the left edge after movement.
 	for i in range(20):

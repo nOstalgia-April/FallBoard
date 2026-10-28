@@ -43,6 +43,14 @@ jobs:
             sudo apt-get install -y xvfb
           fi
           LIBGL_ALWAYS_SOFTWARE=1 xvfb-run -a godot --path . --resolution 1440x900 --script tests/visual_capture.gd
+      - name: Install browser for exported Web smoke test
+        run: |
+          npm install --prefix "$RUNNER_TEMP/fallboard-web-test" playwright@1.56.1
+          node "$RUNNER_TEMP/fallboard-web-test/node_modules/playwright/cli.js" install --with-deps chromium
+      - name: Test exported Web with real mouse input
+        env:
+          NODE_PATH: ${{ runner.temp }}/fallboard-web-test/node_modules
+        run: node tools/web_smoke.cjs
       - name: Save downloadable builds
         uses: actions/upload-artifact@v4
         with:
