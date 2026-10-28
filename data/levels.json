@@ -1,0 +1,212 @@
+[
+  {
+    "id": "01",
+    "title": "临界一推",
+    "subtitle": "基础推落",
+    "tag": "LEARN THE EDGE",
+    "description": "敌人就在边缘。\n比较接触面的数字，\n用两次攻击结束战斗。",
+    "hint": "选中 A，再把鼠标移到它上方的敌人：7 > 2，直接推落。B 也有同样的机会。",
+    "pieces": [
+      {
+        "id": "P1",
+        "name": "A",
+        "team": 0,
+        "position": [
+          0,
+          1
+        ],
+        "values": [
+          7,
+          5,
+          3,
+          3
+        ]
+      },
+      {
+        "id": "P2",
+        "name": "B",
+        "team": 0,
+        "position": [
+          2,
+          1
+        ],
+        "values": [
+          8,
+          4,
+          3,
+          5
+        ]
+      },
+      {
+        "id": "E1",
+        "name": "X",
+        "team": 1,
+        "position": [
+          0,
+          0
+        ],
+        "values": [
+          3,
+          4,
+          2,
+          3
+        ]
+      },
+      {
+        "id": "E2",
+        "name": "Y",
+        "team": 1,
+        "position": [
+          2,
+          0
+        ],
+        "values": [
+          3,
+          3,
+          4,
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "02",
+    "title": "一步之遥",
+    "subtitle": "移动与站位",
+    "tag": "MAKE YOUR ANGLE",
+    "description": "击杀之前，先找到位置。\n移动和攻击共用行动点，\n每一步都要留出下一手。",
+    "hint": "A 向上移动一格，再攻击 X。随后观察敌人的位置，B 的上方和右方数值都能创造推落机会。",
+    "pieces": [
+      {
+        "id": "P1",
+        "name": "A",
+        "team": 0,
+        "position": [
+          0,
+          2
+        ],
+        "values": [
+          7,
+          8,
+          2,
+          4
+        ]
+      },
+      {
+        "id": "P2",
+        "name": "B",
+        "team": 0,
+        "position": [
+          1,
+          2
+        ],
+        "values": [
+          8,
+          4,
+          3,
+          5
+        ]
+      },
+      {
+        "id": "E1",
+        "name": "X",
+        "team": 1,
+        "position": [
+          0,
+          0
+        ],
+        "values": [
+          3,
+          5,
+          2,
+          3
+        ]
+      },
+      {
+        "id": "E2",
+        "name": "Y",
+        "team": 1,
+        "position": [
+          2,
+          0
+        ],
+        "values": [
+          4,
+          3,
+          2,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "03",
+    "title": "让出一条路",
+    "subtitle": "双棋子配合",
+    "tag": "TWO PIECES. ONE PLAN.",
+    "description": "队友也会挡住击退路线。\nA 擅长向右，B 擅长向上。\n先让路，再一起制造机会。",
+    "hint": "A 向右攻击 X 会被 B 阻挡。先让 B 离开右侧格，再安排攻击。X 只能被 A 从左侧推动，Y 只能被 B 从下方推动。",
+    "pieces": [
+      {
+        "id": "P1",
+        "name": "A",
+        "team": 0,
+        "position": [
+          0,
+          1
+        ],
+        "values": [
+          1,
+          8,
+          1,
+          1
+        ]
+      },
+      {
+        "id": "P2",
+        "name": "B",
+        "team": 0,
+        "position": [
+          2,
+          1
+        ],
+        "values": [
+          8,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "id": "E1",
+        "name": "X",
+        "team": 1,
+        "position": [
+          1,
+          1
+        ],
+        "values": [
+          9,
+          9,
+          8,
+          2
+        ]
+      },
+      {
+        "id": "E2",
+        "name": "Y",
+        "team": 1,
+        "position": [
+          1,
+          0
+        ],
+        "values": [
+          9,
+          9,
+          2,
+          9
+        ]
+      }
+    ]
+  }
+]
